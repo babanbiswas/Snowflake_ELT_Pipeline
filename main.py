@@ -32,16 +32,16 @@ conn = connect(**snowflake_config)
 #print(conn)
 cursor = conn.cursor()
 #print(cursor)
-#cursor.execute('''
-#CREATE OR REPLACE TABLE ELT_DB.ELT_SCHEMA.US_POPULATION(
-#    "ID Nation" VARCHAR(20),
-#    NATION VARCHAR(30),
-#    "ID Year" VARCHAR(4),
-#    YEAR VARCHAR(4),
-#    POPULATION VARCHAR(20),
-#    "Slug Nation" VARCHAR(30)
-#)
-#''')
+cursor.execute('''
+CREATE OR REPLACE TABLE ELT_DB.ELT_SCHEMA.US_POPULATION(
+   ID_Nation VARCHAR(20),
+    NATION VARCHAR(30),
+    ID_Year VARCHAR(4),
+    YEAR VARCHAR(4),
+    POPULATION VARCHAR(20),
+    Slug_Nation VARCHAR(30)
+)
+''')
 
 try:
     for row_dict in transformed_data:
