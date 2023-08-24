@@ -1,0 +1,20 @@
+How to setup git :
+
+1. Open Git bash.
+2. Go to project location 
+ex - /c/Users/Baban Biswas/PycharmProjects/ELT_PROJECT
+3. Run if you are doinf first time :
+git init
+git add .
+git commit -m "Initial Commit"
+4.Get your repo url (You can get that in your github -> Repo Name -> Code -> HTTPS)
+Ex - https://github.com/babanbiswas/Snowflake_ELT_Pipeline.git
+5. Run if you are doing for that repo first time 
+git remote add origin https://github.com/babanbiswas/Snowflake_ELT_Pipeline.git
+
+6. Make changes in your code
+7. git add .
+8. git commit -m "updated"
+9. git push origin master
+
+Point 9 will push code in master branch 
