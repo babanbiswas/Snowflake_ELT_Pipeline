@@ -1,5 +1,6 @@
 import requests
 from snowflake.connector import connect
+import config
 api_url = "https://datausa.io/api/data?drilldowns=Nation&measures=Population"
 response = requests.get(api_url)
 #print(response.status_code)
@@ -20,15 +21,8 @@ for record in api_data['data']:
 
 #print(transformed_data[0])
 
-snowflake_config = {
-    "user": "bob123",
-    "password": "Bob123*#",
-    "account": "am33284.central-india.azure",
-    "warehouse": "COMPUTE_WH",
-    "database": "ELT_DB",
-    "schema": "ELT_SCHEMA"
-}
-conn = connect(**snowflake_config)
+
+conn = connect(**config.snowflake_config)
 #print(conn)
 cursor = conn.cursor()
 #print(cursor)
